@@ -3,7 +3,7 @@
 //readme
 
 
-function changeBackgroundColor() {
+function hideProfiles() {
   [].forEach.call(document.querySelectorAll('.user-info '), function (el) {
     el.style.visibility = 'hidden';
   });
@@ -14,7 +14,7 @@ chrome.tabs.onUpdated.addListener((tabId, tab) => {
     if (tab.url.includes("stackoverflow.com")) {
       chrome.scripting.executeScript({
         target: { tabId: tabId },
-        func: changeBackgroundColor,
+        func: hideProfiles,
       })
     }
   }
