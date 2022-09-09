@@ -6,11 +6,8 @@
     "background": {
         "service_worker": "background.js"
       },
-    "permissions": ["activeTab"],
-    "content_scripts": [
-      {
-        "matches": ["https://*.stackoverflow.com/*"],
-        "js": ["contentScript.js"]
-      }
+    "permissions": ["storage", "activeTab", "scripting", "tabs"],
+    "host_permissions": [
+      "https://*.stackoverflow.com/*"
     ]
   }
