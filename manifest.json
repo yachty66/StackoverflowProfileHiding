@@ -1,0 +1,16 @@
+{
+    "name": "MyApp",
+    "description": "Build an Extension!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+      },
+    "permissions": ["storage", "activeTab", "scripting", "tabs"],
+    "content_scripts": [
+      {
+        "matches": ["https://*.stackoverflow.com/*"],
+        "js": ["contentScript.js"]
+      }
+    ]
+  }
